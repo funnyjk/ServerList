@@ -1,0 +1,30 @@
+{
+	name: "ACT2014SERVER4",
+        WEBSITE: "act2014server.com:8000",
+        databases: [{
+            name: "Advanced_Resources"
+        }, {
+            name: "Advantage_Software"
+        }, {
+            name: "AdvantageTEMP"
+        }, {
+            name: "Aqua_Life", 
+            client: "Aqua Life"
+        }, {
+            name: "CBSI_TransUnion"
+        }, {
+            name: "Credit_Bureau"
+        }, {
+            name: "Credit_Bureau_Collections"
+        }, {
+            name: "Credit_Bureau_Insight"
+        }, {
+            name: "Dunes_Golf_Beach"
+        }, {
+            name: "Espo_Fire_Water"
+        }, {
+            name: "GT_Conway_Associates"
+        }, {
+            name: "Insight_Capital_Brokers"
+	}]
+}
