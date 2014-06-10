@@ -23,6 +23,6 @@ module.exports = function(app) {
 		res.send('404 Error: PAGE NOT FOUND');
 	});
 	app.get('*', function(req, res) {
-		res.sendfile('./public/index.html');
+		res.sendfile('./public/404.html');
 	});
 };
