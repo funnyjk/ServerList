@@ -7,6 +7,10 @@ angular.module('ServerListApp', ['ngResource', 'ui.bootstrap'])
 				templateUrl: 'views/main.html',
 				controller: 'MainCtrl'
 			})
+			.when('/add-server', {
+				templateUrl: 'views/server.html',
+				controller: 'ServerNewCtrl'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
