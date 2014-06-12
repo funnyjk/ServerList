@@ -1,0 +1,15 @@
+<div>
+	<div class="page-header">
+		<h2>ServerList
+			<div class="pull-right">
+				<a class="btn" href="#/add-server"><span tooltip="Add Server"><i class="icon icon-plus-sign"></i></span></a>
+				<a class="btn" ng-click="saveAll()"><span tooltip="Save All"><i class="icon icon-file"></i></span></a>
+			</div>
+		</h2>
+	</div>
+</div>
+<div ng-Repeat="server in activeServers | orderBy: 'VHDName'">
+	<h2 class="server">{{server.VHDName}} <a class="btn" href="#/edit-server/{{server._id}}"><span tooltip="Edit Client"><i class="icon icon-plus-sign"></i></span></a></h2>
+
+	<div ng-repeat="database in server.Databases | orderBy:'DBName'">
+		<h3 class="database">{{database.DBName}} <a class="btn" ng-click="showTasks(database)"><i class="icon icon-tasks"></i></a><a class="btn" href="#/edit-database/{{server._id}}/{{database._id}}"><span tooltip="Edit Database"><i class="icon icon-edit"></i></span></a> <a class="btn" href="#/add-user/{{server._id}}/{{database._id}}"><span tooltip="Add User"><i class="icon icon-plus-sign"></i></span></a> <a class="btn" ng-click="deleteDB(server._id, $index)"><span tooltip="Delete Database"><i class="icon icon-trash"></i></span></a></h3>

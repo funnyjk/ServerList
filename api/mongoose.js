@@ -29,6 +29,21 @@ exports.create = function(req, res) {
 	});
 };
 
+// Delete a Server
+exports.destroy = function(req, res) {
+	var server = req.server;
+
+	server.remove(function(err) {
+		if (err) {
+			res.render('error', {
+				status: 500
+			});
+		} else {
+			res.jsonp(server);
+		}
+	});
+};
+
 // Show a Server
 exports.show = function(req, res) {
 	res.jsonp(req.server);
@@ -38,7 +53,7 @@ exports.update = function(req, res) {
 	var server = req.server;
 
 	server.VHDName = req.body.VHDName;	
-//	server = _.extent(server, req.body);
+	server = _.extent(server, req.body);
 	
 	server.save(function(err) {
 		res.jsonp(server);

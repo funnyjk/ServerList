@@ -2,17 +2,18 @@ var async = require('async');
 
 module.exports = function(app) {
 	
-	// Backend Routes =========
+// Backend Routes =======================================
 	var servers = require('../api/mongoose');
 	app.get('/servers', servers.all);
 	app.get('/servers/:serverId', servers.show);
 	app.post('/servers', servers.create);
-	app.post('/servers/:serverId', servers.update);	
+	app.put('/servers/:serverId', servers.update);	
+	app.del('/servers/:serverId', servers.destroy);
 
 	// Parameters
 	app.param(':serverId', servers.server);
 
-	// Frontend Routes ======
+// Frontend Routes ======================================
 	app.get('/test', function(req, res) {
 		res.send('TEST DATA');
 	});	

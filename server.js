@@ -10,7 +10,8 @@ var 	express = require('express'),
 // config files
 var db = require('./config/db');
 
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 8080;
+//var port = 80;
 mongoose.connect(db.url);
 
 app.configure( function () {
