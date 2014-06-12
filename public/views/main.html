@@ -7,7 +7,7 @@
 			</div>
 		</h2>
 	</div>
-	<div ng-Repeat="server in servers | orderBy: 'VHDName'">
+	<div ng-Repeat="server in activeServers | orderBy: 'VHDName'">
 	<h2 class="server">{{server.VHDName}} <a class="btn" href="#/edit-server/{{server._id}}"><span tooltip="Edit Client"><i class="icon icon-plus-sign"></i></span></a></h2>
 
 	<div ng-repeat="database in server.Databases | orderBy:'DBName'">
