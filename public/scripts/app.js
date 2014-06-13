@@ -11,6 +11,10 @@ angular.module('ServerListApp', ['ngResource', 'ui.bootstrap'])
 				templateUrl: 'views/server.html',
 				controller: 'ServerNewCtrl'
 			})
+			.when('/edit-server/:id', {
+				templateUrl: 'views/server.html',
+				controller: 'ServerEditCtrl'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

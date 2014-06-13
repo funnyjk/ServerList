@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ServerListApp')
-	.controller('MainCtrl', function ($scope, $location, $filter, ServerData, Notification) {
+	.controller('MainCtrl', function ($scope, $location, $filter, ServerData) {
 		$scope.serverCreationString = "";
 		$scope.databaseCreationString = "";
 		$scope.userCreationSring = "";
