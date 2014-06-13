@@ -2,6 +2,18 @@
 
 angular.module('ServerListApp')
 	.controller('MainCtrl', function ($scope, $location, $filter, ServerData) {
+		
+		$scope.showAll = false;
+   		$scope.showAllToggle = function () {
+       			$scope.showAll = !$scope.showAll;
+		};
+
+		$scope.toggleHide = function (server) {
+			var indx = $scope.servers.indexOf(server);
+		$scope.servers[indx].listShow = !$scope.servers[indx].listShow;
+		};
+		$scope.searchField = "";
+
 		$scope.serverCreationString = "";
 		$scope.databaseCreationString = "";
 		$scope.userCreationSring = "";

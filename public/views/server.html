@@ -1,22 +1,33 @@
-<form name="serverForm" method="post" class="form-horizontal">
+me="serverForm" method="post" class="form-horizontal">
 	<fieldset>
 		<div class="control-group">
-			<label class="control-label" for="serverName">Server Name </label>
+		<label class="control-label" for="serverName">Server Name </label>
 
 			<div class="controls">
-				<input class="input-large" id="serverName" name="serverName" type="text" ng-model="server.VHDName" required>
-
+			<input class="input-large" id="serverName" name="serverName" type="text" ng-model="server.VHDName" required>
 				<div ng-show="addEvent.serverName.$error.required && addEvent.$dirty">
 					<p><i class="icon icon-warning-sign"></i>Please enter a server name</p>
-			</div>
+				</div>
+			<input class="input-large" placeholder="serverHost" name="serverHost" type="text" ng-model="server.HostName">
+			<input class="input-large" placeholder="serverServer" name="serverServer" type="text" ng-model="server.Server">
+			<input class="input-large" placeholder="serverHostLoc" name="serverHostLoc" type="text" ng-model="server.HostLocation">
+			<input class="input-large" placeholder="serverOS" name="serverOS" type="text" ng-model="server.OSType">
+			<input class="input-large" placeholder="serverLicense" name="serverLicense" type="text" ng-model="server.License">
+			<input class="input-large" placeholder="serverEIP" name="serverEIP" type="text" ng-model="server.ExternalIP">
+			<input class="input-large" placeholder="serverIIP" name="serverIIP" type="text" ng-model="server.InternalIP">
+			<input class="input-large" placeholder="serverACTURL" name="serverACTURL" type="text" ng-model="server.ACTURL">
+			<input class="input-large" placeholder="serverACTVer" name="serverACTVer" type="text" ng-model="server.ACTVersion">
+			<input class="input-large" placeholder="serverWebPort" name="serverWebPort" type="text" ng-model="server.WebPort">
+			<input class="input-large" placeholder="serverSyncPort" name="serverSyncPort" type="text" ng-model="server.SyncPort">
+			<input class="input-large" placeholder="serverSpecialNote" name="serverSpecialNote" type="text" ng-model="server.SpecialNotes">
 			</div>
 		</div>
 	<div>{{server}}</div>
-	 <div class="control-group">
-            <div class="controls">
-                <a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>
-                <a href="#/" name="cancelBtn" class="btn btn-large btn-danger">Cancel</a>
-            </div>
-        </div>
+		<div class="control-group">
+			<div class="controls">
+				<a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>
+				<a href="#/" name="cancelBtn" class="btn btn-large btn-danger">Cancel</a>
+			</div>
+		</div>
 	</fieldset>
 </form>
