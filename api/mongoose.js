@@ -44,20 +44,19 @@ exports.destroy = function(req, res) {
 	});
 };
 
-// Show a Server
-exports.show = function(req, res) {
-	res.jsonp(req.server);
-};
-
 exports.update = function(req, res) { 
 	var server = req.server;
 
-	server.VHDName = req.body.VHDName;	
-	server = _.extent(server, req.body);
+	server = _.extend(server, req.body);
 	
 	server.save(function(err) {
 		res.jsonp(server);
 	});
+};
+
+// Show a Server
+exports.show = function(req, res) {
+	res.jsonp(req.server);
 };
 
 // Show all servers

@@ -38,7 +38,7 @@ angular.module('ServerListApp')
 					$scope.servers = ServerData.query();
 				})
 			});
-		}; 
+		} 
 		
 		$scope.saveAll = function(){
 			angular.forEach($scope.servers, function(server){
@@ -46,7 +46,7 @@ angular.module('ServerListApp')
 					$scope.init();
 				});
 			})
-		};	
+		}	
 		
 		$scope.filterServers = function() {
 			function filterActiveServers(servers) {

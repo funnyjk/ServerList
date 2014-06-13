@@ -31,7 +31,7 @@ var ServerSchema = new Schema({
 
 ServerSchema.statics = {
 	load: function(id, cb) {
-		this.find({
+		this.findOne({
 			_id: id
 		}).exec(cb);
 	}

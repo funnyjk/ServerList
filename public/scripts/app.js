@@ -15,6 +15,10 @@ angular.module('ServerListApp', ['ngResource', 'ui.bootstrap'])
 				templateUrl: 'views/server.html',
 				controller: 'ServerEditCtrl'
 			})
+			.when('/delete-server/:id', {
+				templateUrl: 'views/server.html',
+				controller: 'ServerDeleteCtrl'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
