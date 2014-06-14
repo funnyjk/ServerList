@@ -1,4 +1,4 @@
-me="serverForm" method="post" class="form-horizontal">
+<form name="serverForm" method="post" class="form-horizontal">
 	<fieldset>
 		<div class="control-group">
 		<label class="control-label" for="serverName">Server Name </label>
@@ -22,7 +22,7 @@ me="serverForm" method="post" class="form-horizontal">
 			<input class="input-large" placeholder="serverSpecialNote" name="serverSpecialNote" type="text" ng-model="server.SpecialNotes">
 			</div>
 		</div>
-	<div>{{server}}</div>
+<!--	<div>{{server}}</div> -->
 		<div class="control-group">
 			<div class="controls">
 				<a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>

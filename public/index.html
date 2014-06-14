@@ -1,52 +1,45 @@
 <!doctype html>
-<html class="no-js">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>ServerList</title>
-<meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+	<base href="/">
 
-<link rel="stylesheet" href="styles/bootstrap.css">
-<link rel="stylesheet" href="styles/main.css">
+	<title>ServerList</title>
+<!--	<meta name="viewport" content="width=device-width">
+-->	<!-- Style -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/bootstrap.css">
+	<link rel="stylesheet" href="styles/main.css">
+	
+	<!-- JS -->
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular-route/angular-route.js"></script>
+	<script src="libs/angular-resource/angular-resource.js"></script>
+	
+	<!-- Angularjs -->
+	<script src="scripts/controllers/MainCtrl.js"></script>
+	<script src="scripts/controllers/SrvrNewCtrl.js"></script>
+	<script src="scripts/controllers/SrvrEditCtrl.js"></script>
+	<script src="scripts/services/ServerData.js"></script>
+	<script src="scripts/appRoutes.js"></script>
+	<script src="scripts/app.js"></script>
 </head>
 <body ng-app="ServerListApp">
-<div class="navbar">
-<div class="navbar-inner">
-<a class="brand" href="#">Home</a>
+<div class="container"> 
+	<!-- HEADER -->
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">ServerList: Home</a>
+		</div>
+
+		<!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
+		<ul class="nav navbar-nav">
+			<li><a href="/servers">Servers</a></li>
+		</ul>
+	</nav>
+
+	<!-- Angular View -->
+	<div ng-view></div>
 </div>
-</div>
-<div class="container-fluid" ng-view=""></div>
-
-<script src="libs/jquery/jquery.js"></script>
-<script src="libs/jquery-ui/ui/jquery-ui.js"></script>
-<script src="libs/underscore/underscore.js"></script>
-<script src="libs/angular/angular.js"></script>
-
-<script src="libs/bootstrap-sass/js/bootstrap-affix.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-alert.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-modal.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-transition.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-button.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-popover.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-carousel.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-collapse.js"></script>
-<script src="libs/bootstrap-sass/js/bootstrap-tab.js"></script>
-
-
-<script src="libs/angular-resource/angular-resource.js"></script>
-<script src="libs/angular-cookies/angular-cookies.js"></script>
-<script src="libs/angular-sanitize/angular-sanitize.js"></script>
-<script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/server-new.js"></script>
-<script src="scripts/controllers/server-edit.js"></script>
-<script src="scripts/controllers/server-delete.js"></script>
-<script src="scripts/services/server-data.js"></script>
-
 </body>
 </html>

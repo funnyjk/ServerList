@@ -31,4 +31,4 @@ require('./routes/routes')(app);
 // start app ==================================
 app.listen(port);
 console.log('Listening on Port: ' + port);
-exports = module.exports.app;
+exports = module.exports = app;
