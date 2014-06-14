@@ -1,0 +1,22 @@
+<form name="databaseForm" method="post" class="form-horizontal">
+	<fieldset>
+		<div class="control-group">
+			<label class="control-label" for="dbName">Database Name </label>
+
+			<div class="controls">
+				<input class="input-large" id="dbName" name="dbName" type="text"
+				       ng-model="database.DBName"
+				       required>
+				<div ng-show="addEvent.dbName.$error.required && addEvent.$dirty">
+				    <p><i class="icon icon-warning-sign"></i>Please enter an database name</p>
+				</div>
+			</div>
+		</div>
+	<div class="control-group">
+		<div class="controls">
+			<a name="saveBtn" ng-click="save()" ng-disabled="dbForm.$invalid" class="btn btn-large btn-primary" >Save</a>
+			<a href="#/" name="cancelBtn" class="btn btn-large btn-danger">Cancel</a>
+		</div>
+	</div>
+	</fieldset>
+</form>

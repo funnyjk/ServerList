@@ -1,2 +1,2 @@
-angular.module('ServerListApp', ['ngRoute', 'ngResource', 'appRoutes', 'MainCtrl', 'SrvrNewCtrl', 'SrvrEditCtrl', 'ServerDataService']);
+angular.module('ServerListApp', ['ngRoute', 'ngResource', 'appRoutes', 'MainCtrl', 'SrvrNewCtrl', 'SrvrEditCtrl', 'DBNewCtrl', 'ServerDataService']);
 

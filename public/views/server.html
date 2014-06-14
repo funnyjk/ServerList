@@ -23,6 +23,11 @@
 			</div>
 		</div>
 <!--	<div>{{server}}</div> -->
+<div class="control-group" ng-show="isEdit">
+                    <div>Databases<a href="#/db-new/{{server._id}}"><i class="icon-plus-sign" ></i></a></div>
+                <div ng-repeat="Database in server.Databases">
+                    {{Database.DBName}}
+                </div>
 		<div class="control-group">
 			<div class="controls">
 				<a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>

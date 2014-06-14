@@ -16,5 +16,9 @@ angular.module('appRoutes', [])
 			.when('/delete-server/:id', {
 				templateUrl: 'views/server.html',
 				controller: 'ServerDeleteCtrl'
-			});
+			})
+			.when('/db-new/:id', {
+				templateUrl: 'views/db.html',
+				controller: 'DBNewController'
+			})
 	}]);
