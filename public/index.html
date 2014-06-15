@@ -20,8 +20,12 @@
 	<script src="scripts/controllers/MainCtrl.js"></script>
 	<script src="scripts/controllers/SrvrNewCtrl.js"></script>
 	<script src="scripts/controllers/SrvrEditCtrl.js"></script>
-	<script src="scripts/services/ServerData.js"></script>
+	<script src="scripts/controllers/SrvrDeleteCtrl.js"></script>
 	<script src="scripts/controllers/DBNewCtrl.js"></script>
+	<script src="scripts/controllers/DBEditCtrl.js"></script>
+	<script src="scripts/controllers/DBDeleteCtrl.js"></script>
+	<script src="scripts/services/ServerData.js"></script>
+	<script src="scripts/filters/PFilter.js"></script>
 	<script src="scripts/appRoutes.js"></script>
 	<script src="scripts/app.js"></script>
 </head>
@@ -30,11 +34,12 @@
 	<!-- HEADER -->
 	<nav class="navbar navbar-inverse">
 		<div class="navbar-header">
+		
 			<a class="navbar-brand" href="/">ServerList: Home</a>
 		
-
+		
 		<!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
-		<ul class="nav navbar-nav">
+		<ul class="nav">
 			<li><a  href="/servers">Servers</a></li>
 			<li><a href="/about">About</a></li>
 		</ul>

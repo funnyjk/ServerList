@@ -10,7 +10,7 @@ angular.module('MainCtrl', [])
 			var indx = $scope.servers.indexOf(server);
 		$scope.servers[indx].listShow = !$scope.servers[indx].listShow;
 		};
-		$scope.searchField = "";
+		$scope.searchField = "";		
 
 		$scope.serverCreationString = "";
 		$scope.databaseCreationString = "";

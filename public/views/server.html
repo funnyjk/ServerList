@@ -1,10 +1,10 @@
 <form name="serverForm" method="post" class="form-horizontal">
 	<fieldset>
-		<div class="control-group">
+		<div class="control-group"><a class="pull-right" href="#/server-delete/{{server._id}}"><span tooltip="Delete Server"><i class="icon icon-trash"></i></span></a>
 		<label class="control-label" for="serverName">Server Name </label>
 
 			<div class="controls">
-			<input class="input-large" id="serverName" name="serverName" type="text" ng-model="server.VHDName" required>
+			<input class="input-large" placeholder="serverName" id="serverName" name="serverName" type="text" ng-model="server.VHDName" required>
 				<div ng-show="addEvent.serverName.$error.required && addEvent.$dirty">
 					<p><i class="icon icon-warning-sign"></i>Please enter a server name</p>
 				</div>
@@ -28,13 +28,15 @@
 		<thead>                 
 		<tr>
  			<th>Databases</th>
-			<th>Users</th>
+			<th>Company</th>
+			<th>URL</th>
 			<th><a href="#/db-new/{{server._id}}"><i class="icon-plus-sign" ></i></a></th>
 		</tr>
 		<tbody>
                 <tr  ng-repeat="Database in server.Databases">
                 	<td>{{Database.DBName}}</td>
-			<td>{{Database.Users}}</td>
+			<td>{{Database.Company}}</td>
+			<td>{{server.ACTURL}}:{{server.WebPort}}/{{Database.URL}}</td>
 			<td><a href="#/db-edit/{{server._id}}/{{Database._id}}"><i class="icon-edit"></i></a> <a href="#/db-delete/{{server._id}}/{{Database._id}}"><i class="icon-remove"></i></a></td>
 		</tr>
 		</tbody>

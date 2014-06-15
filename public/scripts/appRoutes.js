@@ -5,20 +5,28 @@ angular.module('appRoutes', [])
 				templateUrl: 'views/main.html',
 				controller: 'MainCtrl'
 			})
-			.when('/add-server', {
+			.when('/server-add', {
 				templateUrl: 'views/server.html',
 				controller: 'ServerNewCtrl'
 			})
-			.when('/edit-server/:id', {
+			.when('/server-edit/:id', {
 				templateUrl: 'views/server.html',
 				controller: 'ServerEditCtrl'
 			})
-			.when('/delete-server/:id', {
+			.when('/server-delete/:id', {
 				templateUrl: 'views/server.html',
 				controller: 'ServerDeleteCtrl'
 			})
 			.when('/db-new/:id', {
 				templateUrl: 'views/db.html',
 				controller: 'DBNewController'
+			})
+			.when('/db-edit/:id/:database', {
+				templateUrl: 'views/db.html',
+				controller: 'DBEditController'
+			})
+			.when('/db-delete/:id/:database', {
+				templateUrl: 'views/db.html',
+				controller: 'DBDeleteController'
 			})
 	}]);
