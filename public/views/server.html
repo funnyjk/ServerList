@@ -24,10 +24,21 @@
 		</div>
 <!--	<div>{{server}}</div> -->
 <div class="control-group" ng-show="isEdit">
-                    <div>Databases<a href="#/db-new/{{server._id}}"><i class="icon-plus-sign" ></i></a></div>
-                <div ng-repeat="Database in server.Databases">
-                    {{Database.DBName}}
-                </div>
+	<table class="table table-bordered"> 
+		<thead>                 
+		<tr>
+ 			<th>Databases</th>
+			<th>Users</th>
+			<th><a href="#/db-new/{{server._id}}"><i class="icon-plus-sign" ></i></a></th>
+		</tr>
+		<tbody>
+                <tr  ng-repeat="Database in server.Databases">
+                	<td>{{Database.DBName}}</td>
+			<td>{{Database.Users}}</td>
+			<td><a href="#/db-edit/{{server._id}}/{{Database._id}}"><i class="icon-edit"></i></a> <a href="#/db-delete/{{server._id}}/{{Database._id}}"><i class="icon-remove"></i></a></td>
+		</tr>
+		</tbody>
+	</table></div>
 		<div class="control-group">
 			<div class="controls">
 				<a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>

@@ -1,13 +1,13 @@
-	<div class="page-header">
+	<div class="header">
 		<h2>ServerList
 			<div class="pull-right">
 				<a class="" href="#/add-server"><span tooltip="Add Server"><i class="icon icon-plus-sign"></i></span></a>
 				<a class="" ng-click="saveAll()"><span tooltip="Save All"><i class="icon icon-file"></i></span></a>
 			</div>
-			<input ng-model="searchField" type="text" placeholder="Search for Database">{{searchField}}
+			<input ng-model="searchField" type="text" placeholder="Search for Database"><div class="btn" ng-click="showAllToggle()">ShowAll</div>
 		</h2>
 	</div>
-<div ng-repeat-start="server in servers | orderBy:'VHDName'" ng-click='toggleHide(server)' class='col-xs-12 col-sm-12 col-md-12 server'>{{server.VHDName}} -- {{server.Databases.length}}
+<div ng-repeat-start="server in servers | orderBy:'VHDName'" ng-click='toggleHide(server)' class='col-xs-12 col-sm-12 col-md-12 server'>{{server.VHDName}} -- There are {{server.Databases.length}} databases here
 <a class="" href="#/edit-server/{{server._id}}"><span tooltip="Edit Client"><i class="icon icon-wrench"></i></span></a></div>
 	<div ng-repeat="Database in server.Databases | filter:searchField" ng-show="server.listShow || searchField.length > 1 || showAll == true" class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>{{Database.DBName}}</div>
 <div ng-repeat-end></div>
