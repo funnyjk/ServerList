@@ -5,16 +5,18 @@
 	<base href="/">
 
 	<title>ServerList</title>
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- Style -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/bootstrap.css">
+<!--	<link rel="stylesheet" href="styles/bootstrap.css">-->
 	<link rel="stylesheet" href="styles/main.css">
 	
 	<!-- JS -->
 	<script src="libs/angular/angular.js"></script>
 	<script src="libs/angular-route/angular-route.js"></script>
 	<script src="libs/angular-resource/angular-resource.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 	
 	<!-- Angularjs -->
 	<script src="scripts/controllers/MainCtrl.js"></script>
@@ -25,29 +27,45 @@
 	<script src="scripts/controllers/DBEditCtrl.js"></script>
 	<script src="scripts/controllers/DBDeleteCtrl.js"></script>
 	<script src="scripts/services/ServerData.js"></script>
+	<script src="scripts/services/modal.js"></script>
 	<script src="scripts/filters/PFilter.js"></script>
 	<script src="scripts/appRoutes.js"></script>
 	<script src="scripts/app.js"></script>
 </head>
 <body ng-app="ServerListApp">
-<div class="container"> 
 	<!-- HEADER -->
-	<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-		
-			<a class="navbar-brand" href="/">ServerList: Home</a>
-		
-		
-		<!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
-		<ul class="nav">
-			<li><a  href="/servers">Servers</a></li>
-			<li><a href="/about">About</a></li>
-		</ul>
-		</div>
-	</nav>
-
-	<!-- Angular View -->
-	<div ng-view></div>
+	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+			 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			    <span class="sr-only">Toggle navigation</span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">ServerList: Home</a>
+			</div>
+			<div class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+			    	<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			   	<li class="dropdown">
+			      	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				      <ul class="dropdown-menu" ng-controller="MainCtrl">
+					<li><a href="/servers">Servers</a></li>
+					<li><a href="#">Databases</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Server List</li>
+					<li ng-repeat="server in servers | orderBy:'VHDName'"><a href="#/server-edit/{{server._id}}">{{server.VHDName}}</a></li>
+				      </ul>
+            			</li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+      		</div>
+    	</div><!-- Angular View -->
+<div class="container-fluid">
+	<div  ng-view></div>
 </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 angular.module('MainCtrl', [])
-	.controller('MainCtrl', function ($scope, ServerData) {
+	.controller('MainCtrl', function ($scope, ServerData, modalService) {
 		
 		$scope.showAll = false;
    		$scope.showAllToggle = function () {
@@ -58,6 +58,14 @@ angular.module('MainCtrl', [])
 			})
 		}	
 		
+		$scope.dbModal = function (db) {
+			var modalOptions = {
+				closeButtonText: 'Close',
+				headerText: db.DBName,
+				bodyText: "hello"
+			};
+			modalService.showModal({}, modalOptions) 
+		}
 		
 		$scope.init = function(){
 			$scope.servers = ServerData.query();

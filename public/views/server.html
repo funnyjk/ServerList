@@ -1,12 +1,14 @@
 <form name="serverForm" method="post" class="form-horizontal">
 	<fieldset>
-		<div class="control-group"><a class="pull-right" href="#/server-delete/{{server._id}}"><span tooltip="Delete Server"><i class="icon icon-trash"></i></span></a>
+		<div class="control-group">
+		<alert ng-repeat="alert in alerts" type={{alert.type}} close="closeAlert($index)">{{alert.msg}}</alert>
+			<span tooltip="Delete Server"><i ng-click="addAlert()" class="btn glyphicon glyphicon-trash"></i></span></a>
 		<label class="control-label" for="serverName">Server Name </label>
 
 			<div class="controls">
 			<input class="input-large" placeholder="serverName" id="serverName" name="serverName" type="text" ng-model="server.VHDName" required>
 				<div ng-show="addEvent.serverName.$error.required && addEvent.$dirty">
-					<p><i class="icon icon-warning-sign"></i>Please enter a server name</p>
+					<p><i class="glyphicon glyphicon-sign"></i>Please enter a server name</p>
 				</div>
 			<input class="input-large" placeholder="serverHost" name="serverHost" type="text" ng-model="server.HostName">
 			<input class="input-large" placeholder="serverServer" name="serverServer" type="text" ng-model="server.Server">
@@ -23,24 +25,7 @@
 			</div>
 		</div>
 <!--	<div>{{server}}</div> -->
-<div class="control-group" ng-show="isEdit">
-	<table class="table table-bordered"> 
-		<thead>                 
-		<tr>
- 			<th>Databases</th>
-			<th>Company</th>
-			<th>URL</th>
-			<th><a href="#/db-new/{{server._id}}"><i class="icon-plus-sign" ></i></a></th>
-		</tr>
-		<tbody>
-                <tr  ng-repeat="Database in server.Databases">
-                	<td>{{Database.DBName}}</td>
-			<td>{{Database.Company}}</td>
-			<td>{{server.ACTURL}}:{{server.WebPort}}/{{Database.URL}}</td>
-			<td><a href="#/db-edit/{{server._id}}/{{Database._id}}"><i class="icon-edit"></i></a> <a href="#/db-delete/{{server._id}}/{{Database._id}}"><i class="icon-remove"></i></a></td>
-		</tr>
-		</tbody>
-	</table></div>
+
 		<div class="control-group">
 			<div class="controls">
 				<a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>
@@ -49,3 +34,21 @@
 		</div>
 	</fieldset>
 </form>
+<div class="control-group" ng-show="isEdit">
+	<table class="table table-bordered"> 
+		<thead>                 
+		<tr>
+ 			<th>Databases</th>
+			<th>Company</th>
+			<th>URL</th>
+			<th><a href="#/db-new/{{server._id}}"><i class="glyphicon glyphicon-plus" ></i></a></th>
+		</tr>
+		<tbody>
+                <tr  ng-repeat="Database in server.Databases">
+                	<td>{{Database.DBName}}</td>
+			<td>{{Database.Company}}</td>
+			<td>{{server.ACTURL}}:{{server.WebPort}}/{{Database.URL}}</td>
+			<td><a href="#/db-edit/{{server._id}}/{{Database._id}}"><i class="glyphicon glyphicon-pencil"></i></a> <a href="#/db-delete/{{server._id}}/{{Database._id}}"><i class="glyphicon glyphicon-trash"></i></a></td>
+		</tr>
+		</tbody>
+	</table></div>

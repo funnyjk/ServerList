@@ -7,8 +7,25 @@ angular.module('SrvrEditCtrl', ['ngRoute'])
 			$scope.server.$update(function(){
 				$location.path('/');
 			});
-		};
-		
+		}
+
+                $scope.deletePrompt = function () {
+                        var modalOptions = {
+                                closeButtonText: 'Close',
+                                headerText: 'Delete?',
+				bodyText: 'Are you sure?'
+                        };
+                        modalService.showModal({}, modalOptions)
+                }
+	
+		$scope.addAlert = function() {
+		    $scope.alerts.push({type: 'danger', msg: 'ARE YOU SURE?!'});
+		  };
+
+		  $scope.closeAlert = function(index) {
+		    $scope.alerts.splice(index, 1);
+		  };
+	
 		$scope.init = function(){
 			$scope.server = ServerData.get({serverId: $routeParams.id});
 		}
