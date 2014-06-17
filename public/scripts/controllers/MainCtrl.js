@@ -58,15 +58,25 @@ angular.module('MainCtrl', [])
 			})
 		}	
 		
-		$scope.dbModal = function (db) {
+		$scope.dbModal = function (srv, db) {
 			var modalOptions = {
 				closeButtonText: 'Close',
 				headerText: db.DBName,
-				bodyText: "hello"
+				bodyText: srv.VHDName,
 			};
 			modalService.showModal({}, modalOptions) 
 		}
 		
+$scope.check = function (server) {
+        if (server.listShow == true) {
+        return "col-xs-12 col-sm-12 col-md-12 col-lg-12";
+        } else {
+        return "col-xs-12 col-sm-6 col-md-4 col-lg-3";
+        }
+    };
+    $scope.selectedIndex = "";
+    
+
 		$scope.init = function(){
 			$scope.servers = ServerData.query();
 		};

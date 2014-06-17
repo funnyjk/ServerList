@@ -1,3 +1,4 @@
+<div class="container">
 	<div class="header">
 		<h2>{{servers.length}} Servers
 			<div class="pull-right">
@@ -6,20 +7,21 @@
 			</div>
 		
 			<input ng-model="searchField" type="text" placeholder="Search"><i class="btn glyphicon glyphicon-golder-open" ng-click="showAllToggle()"></i>
-</h2>
-	</div>
+</h2>	
+</div>
 
 
 <!--<a class="pull-right" href="#/server-delete/{{server._id}}"><span tooltip="Delete Server"><i class="icon icon-trash"></i></span></a>--></div>
 
-<div ng-repeat-start="server in servers | orderBy:'VHDName'" ng-click='toggleHide(server)' class='col-xs-12 col-sm-12 col-md-12 col-lg-4 server'>{{server.VHDName}}
+<div ng-repeat-start="server in servers | orderBy:'VHDName'" ng-click='toggleHide(server)' class='server' ng-class="check(server)">{{server.VHDName}}
 <a class="btn btn-xs pull-right" href="#/server-edit/{{server._id}}"><span tooltip="Edit Server"><i class="glyphicon glyphicon-wrench"></i></span></a>
  <span class="pull-right">{{server.Databases.length | pluralize:'Database'}} </span>
 </div>
 <div ng-repeat="Database in server.Databases | filter:searchField | orderBy:'DBName'" ng-show="server.listShow || searchField.length > 1 || showAll == true" class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>{{Database.DBName}}
 <a class="pull-right" href="#/db-edit/{{server._id}}/{{Database._id}}"><span tooltip="Edit Database"><i class="glyphicon glyphicon-wrench"></i></span></a>
-<a class="btn btn-xs pull-right" ng-click="dbModal(Database)"><span tooltip="View Database"><i class="glyphicon glyphicon-eye-open"></i></span></a>
+<a class="btn btn-xs pull-right" ng-click="dbModal(server, Database)"><span tooltip="View Database"><i class="glyphicon glyphicon-eye-open"></i></span></a>
 
 <!--<a class="pull-right" href="#/db-delete/{{server._id}}/{{Database._id}}"><span tooltip="Delete Database"><i class="icon icon-trash"></i></span></a>--></div>
 <div ng-repeat-end></div>
+</div>
 </div>
