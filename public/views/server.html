@@ -2,8 +2,7 @@
 	<fieldset>
 		<div class="control-group">
 		<alert ng-repeat="alert in alerts" type={{alert.type}} close="closeAlert($index)">{{alert.msg}}</alert>
-			<span tooltip="Delete Server"><i ng-click="addAlert()" class="btn glyphicon glyphicon-trash"></i></span></a>
-		<label class="control-label" for="serverName">Server Name </label>
+					<label class="control-label" for="serverName">Server Name </label>
 
 			<div class="controls">
 			<input class="input-large" placeholder="serverName" id="serverName" name="serverName" type="text" ng-model="server.VHDName" required>
@@ -30,7 +29,9 @@
 			<div class="controls">
 				<a name="saveBtn" ng-click="save()" ng-disabled="serverForm.$invalid" class="btn btn-large btn-primary" >Save</a>
 				<a href="#/" name="cancelBtn" class="btn btn-large btn-danger">Cancel</a>
-			</div>
+	<a class="pull-right" name="delete" ng-click="deletePrompt()"><span tooltip="Delete Server"><i class="btn glyphicon glyphicon-trash"></i></span></a>
+		
+</div>
 		</div>
 	</fieldset>
 </form>
@@ -48,7 +49,7 @@
                 	<td>{{Database.DBName}}</td>
 			<td>{{Database.Company}}</td>
 			<td>{{server.ACTURL}}:{{server.WebPort}}/{{Database.URL}}</td>
-			<td><a href="#/db-edit/{{server._id}}/{{Database._id}}"><i class="glyphicon glyphicon-pencil"></i></a> <a href="#/db-delete/{{server._id}}/{{Database._id}}"><i class="glyphicon glyphicon-trash"></i></a></td>
+			<td><a href="#/db-edit/{{server._id}}/{{Database._id}}"><i class="glyphicon glyphicon-pencil"></i></a> <a class="#/db-delete/{{server._id}}/{{Database._id}}"><i class="glyphicon glyphicon-trash"></i></a></td>
 		</tr>
 		</tbody>
 	</table></div>

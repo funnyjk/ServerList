@@ -1,5 +1,5 @@
 angular.module('SrvrEditCtrl', ['ngRoute'])
-	.controller('ServerEditCtrl', function($scope, $routeParams, $location, ServerData) {
+	.controller('ServerEditCtrl', function($scope, $routeParams, $location, ServerData, modalService) {
 		$scope.server = null;
 		$scope.isEdit = true;
 		
