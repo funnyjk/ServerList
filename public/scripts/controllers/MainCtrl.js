@@ -5,7 +5,7 @@ angular.module('MainCtrl', [])
    		$scope.showAllToggle = function () {
        			$scope.showAll = !$scope.showAll;
 		};
-
+	
 		$scope.toggleHide = function (server) {
 			var indx = $scope.servers.indexOf(server);
 		$scope.servers[indx].listShow = !$scope.servers[indx].listShow;
@@ -72,13 +72,22 @@ $scope.check = function (server) {
         return "col-xs-12 col-sm-12 col-md-12 col-lg-12";
         } else {
         return "col-xs-12 col-sm-6 col-md-4 col-lg-3";
-        }
-    };
+        };
+//var year = server.VHDName[4] + server.VHDName[5] + server.VHDName[6] + server.VHDName[7];
+//    	if(year == 2013) {
+//		return "btn btn-info";
+//	} else if (year == 2014) {
+//		return "bold";
+//	} else {
+//		$scope.searchField =  year;
+//	}
+	};
     $scope.selectedIndex = "";
     
 
 		$scope.init = function(){
 			$scope.servers = ServerData.query();
+			$scope.headCollapse = false;	
 		};
 		
 		$scope.init();

@@ -1,13 +1,12 @@
-<div class="container">
-	<div class="header">
+<div class="header">
 		<h2>{{servers.length}} Servers
 			<div class="pull-right">
 				<a class="" href="#/server-add"><span tooltip="New Server"><i class="glyphicon glyphicon-plus"></i></span></a>
 				<a class="" ng-click="saveAll()"><span tooltip="Save All"><i class="glyphicon glyphicon-file"></i></span></a>
 			</div>
-		
-			<input ng-model="searchField" type="text" placeholder="Search"><i class="btn glyphicon glyphicon-golder-open" ng-click="showAllToggle()"></i>
+<i class="btn glyphicon glyphicon-folder-open" ng-click="showAllToggle()"></i>
 </h2>	
+			<input ng-model="searchField" class="form" type="text" placeholder="Search">
 </div>
 
 
@@ -15,7 +14,9 @@
 
 <div ng-repeat-start="server in servers | orderBy:'VHDName'" ng-click='toggleHide(server)' class='server' ng-class="check(server)">{{server.VHDName}}
 <a class="btn btn-xs pull-right" href="#/server-edit/{{server._id}}"><span tooltip="Edit Server"><i class="glyphicon glyphicon-wrench"></i></span></a>
- <span class="pull-right">{{server.Databases.length | pluralize:'Database'}} </span>
+<a class="btn btn-xs pull-right" href="#/db-new/{{server._id}}"><span tooltip="Add Database"><i class="glyphicon glyphicon-plus-sign"></i></span></a>
+ <span class="pull-right">{{server.Databases.length | pluralize:'DB'}} </span>
+
 </div>
 <div ng-repeat="Database in server.Databases | filter:searchField | orderBy:'DBName'" ng-show="server.listShow || searchField.length > 1 || showAll == true" class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>{{Database.DBName}}
 <a class="pull-right" href="#/db-edit/{{server._id}}/{{Database._id}}"><span tooltip="Edit Database"><i class="glyphicon glyphicon-wrench"></i></span></a>
@@ -23,5 +24,4 @@
 
 <!--<a class="pull-right" href="#/db-delete/{{server._id}}/{{Database._id}}"><span tooltip="Delete Database"><i class="icon icon-trash"></i></span></a>--></div>
 <div ng-repeat-end></div>
-</div>
 </div>
