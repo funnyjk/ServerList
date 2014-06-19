@@ -33,8 +33,8 @@
 	<script src="scripts/app.js"></script>
 </head>
 <body ng-app="ServerListApp" ng-init="headCollapse = true">
-	<!-- HEADER -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 			 <button type="button" class="navbar-toggle" ng-click="headCollapse = !headCollapse">
@@ -61,11 +61,12 @@
 				      </ul>
             			</li>
 			  </ul>
-			</div><!--/.nav-collapse -->
+			</div>
       		</div>
-    	</nav><!-- Angular View -->
-<div class="container">
+    	</div>
+<div class="container-fluid">
 	<div  ng-view></div>
 </div>
+<br />
 </body>
 </html>

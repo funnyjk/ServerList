@@ -29,4 +29,10 @@ angular.module('appRoutes', [])
 				templateUrl: 'views/db.html',
 				controller: 'DBDeleteController'
 			})
+			.when('/about', {
+				templateUrl: 'views/about.html'
+			})
+			.when('/contact', {
+				templateUrl: 'views/contact.html'
+			})
 	}]);

@@ -1,16 +1,13 @@
-<div class="header">
-		<h2>{{servers.length}} Servers
-			<div class="pull-right">
-				<a class="" href="#/server-add"><span tooltip="New Server"><i class="glyphicon glyphicon-plus"></i></span></a>
-				<a class="" ng-click="saveAll()"><span tooltip="Save All"><i class="glyphicon glyphicon-file"></i></span></a>
-			</div>
+<!--<div>
+		<h2>{{servers.length}} Servers</h2>-->
+<div>
+				<a class="pull-right" href="#/server-add"><span tooltip="New Server"><i class="glyphicon glyphicon-plus"></i></span></a>
+				<a class="pull-right" ng-click="saveAll()"><span tooltip="Save All"><i class="glyphicon glyphicon-file"></i></span></a>
 <i class="btn glyphicon glyphicon-folder-open" ng-click="showAllToggle()"></i>
-</h2>	
 			<input ng-model="searchField" class="form" type="text" placeholder="Search">
 </div>
 
-
-<!--<a class="pull-right" href="#/server-delete/{{server._id}}"><span tooltip="Delete Server"><i class="icon icon-trash"></i></span></a>--></div>
+<!--<a class="pull-right" href="#/server-delete/{{server._id}}"><span tooltip="Delete Server"><i class="icon icon-trash"></i></span></a>-->
 
 <div ng-repeat-start="server in servers | orderBy:'VHDName'" ng-click='toggleHide(server)' class='server' ng-class="check(server)">{{server.VHDName}}
 <a class="btn btn-xs pull-right" href="#/server-edit/{{server._id}}"><span tooltip="Edit Server"><i class="glyphicon glyphicon-wrench"></i></span></a>
