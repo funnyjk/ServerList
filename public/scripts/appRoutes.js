@@ -3,7 +3,8 @@ angular.module('appRoutes', [])
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/main.html',
-				controller: 'MainCtrl'
+				controller: 'MainCtrl',
+				css: 'styles/main.css'
 			})
 			.when('/server-add', {
 				templateUrl: 'views/server.html',
@@ -30,7 +31,9 @@ angular.module('appRoutes', [])
 				controller: 'DBDeleteController'
 			})
 			.when('/about', {
-				templateUrl: 'views/about.html'
+				templateUrl: 'views/about.html',
+				controller: 'AboutCtrl',
+				css: 'styles/about.css'
 			})
 			.when('/contact', {
 				templateUrl: 'views/contact.html'

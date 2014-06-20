@@ -1,15 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="ServerListApp" ng-init="headCollapse = true">
 <head>
 	<meta charset="UTF-8">
 	<base href="/">
 
 	<title>ServerList</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="icon" href="favicon.ico">
 	<!-- Style -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-<!--	<link rel="stylesheet" href="styles/bootstrap.css">-->
-	<link rel="stylesheet" href="styles/main.css">
+<!--	<link rel="stylesheet" href="styles/about.css"> -->
+<!--	<link rel="stylesheet" href="styles/main.css"> -->
 	
 	<!-- JS -->
 	<script src="libs/angular/angular.js"></script>
@@ -26,14 +28,15 @@
 	<script src="scripts/controllers/DBNewCtrl.js"></script>
 	<script src="scripts/controllers/DBEditCtrl.js"></script>
 	<script src="scripts/controllers/DBDeleteCtrl.js"></script>
+	<script src="scripts/controllers/AboutCtrl.js"></script>
 	<script src="scripts/services/ServerData.js"></script>
 	<script src="scripts/services/modal.js"></script>
+	<script src="scripts/directives/routeStyles.js"></script>
 	<script src="scripts/filters/PFilter.js"></script>
 	<script src="scripts/appRoutes.js"></script>
 	<script src="scripts/app.js"></script>
 </head>
-<body ng-app="ServerListApp" ng-init="headCollapse = true">
-
+<body>
 	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -47,7 +50,7 @@
 			</div>
 			<div class="navbar-collapse collapse" collapse="headCollapse">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Home</a></li>
 			    	<li><a href="#about">About</a></li>
 				<li><a href="#contact">Contact</a></li>
 			   	<li class="dropdown">
@@ -64,7 +67,7 @@
 			</div>
       		</div>
     	</div>
-<div class="container-fluid">
+<div class="container-full">
 	<div  ng-view></div>
 </div>
 <br />
